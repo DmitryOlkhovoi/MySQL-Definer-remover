@@ -15,13 +15,13 @@ console.log(`
 ######## ######## ########
 `.red);
 
-// banner.write("UTI").color('red').out();
-
 let spinner = new spinnerModule.Spinner('processing..'.rainbow),
   knownOptions = {
-    string: 'definer',
-    string: 's',
-    string: 't',
+    string: [
+      'definer',
+      's',
+      't'
+    ],
     default: {
       's': 'db.sql',
       't': 'new.sql'
@@ -30,7 +30,7 @@ let spinner = new spinnerModule.Spinner('processing..'.rainbow),
   options = Minimist(process.argv.slice(2), knownOptions),
   occurs = 0;
 
-if((!options.s || !options.t) || ((options.s === true || options.t === true))){
+if(!options.s || !options.t){
   console.log('Usage: --s input filepath --t output filepath');
   process.exit();
 }
