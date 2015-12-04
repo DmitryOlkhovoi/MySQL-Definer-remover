@@ -1,6 +1,6 @@
 {
   "name": "uti-definer-remover",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This utility used to remove DEFINER from exported SQL script",
   "main": "index.js",
   "bin": {
