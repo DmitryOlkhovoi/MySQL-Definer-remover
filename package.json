@@ -1,10 +1,11 @@
 {
-  "name": "utidefinerremover",
-  "version": "1.0.0",
-  "description": "",
+  "name": "uti-definer-remover",
+  "version": "0.0.1",
+  "description": "This utility used to remove DEFINER from exported SQL script",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter nyan",
+    "build": "babel src/lib -d lib && babel src/test -d test"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,8 @@
   },
   "devDependencies": {
     "babel-core": "^6.3.2",
-    "babel-preset-es2015": "^6.1.18"
+    "babel-preset-es2015": "^6.1.18",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
   }
 }

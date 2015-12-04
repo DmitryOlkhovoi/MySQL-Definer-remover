@@ -1,5 +1,5 @@
 import fs from "fs";
-import Minimist from "minimist";
+import minimist from "minimist";
 import spinnerModule from "cli-spinner";
 import colors from "colors";
 import byline from "byline";
@@ -27,7 +27,7 @@ let spinner = new spinnerModule.Spinner('processing..'.rainbow),
       't': 'new.sql'
     }
   },
-  options = Minimist(process.argv.slice(2), knownOptions),
+  options = minimist(process.argv.slice(2), knownOptions),
   occurs = 0;
 
 if(!options.s || !options.t){
