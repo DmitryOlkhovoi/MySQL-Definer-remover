@@ -4,6 +4,7 @@ import minimist from "minimist";
 import {Spinner} from "cli-spinner";
 import colors from "colors";
 import byline from "byline";
+import {name, version} from "../package.json";
 
 console.log(`
 ######## ######## ########
@@ -15,6 +16,8 @@ console.log(`
 ##    ## ###  ### ##    ##
 ######## ######## ########
 `.red);
+console.log(name);
+console.log(version);
 
 //Text spinner init
 let spinner = new Spinner('processing..'.rainbow),
@@ -23,10 +26,12 @@ let spinner = new Spinner('processing..'.rainbow),
   knownOptions = {
     string: [
       'd',
+      'h',
       's',
       't'
     ],
     default: {
+      'h', 'localhost',
       's': 'db.sql',
       't': 'new.sql'
     }
@@ -39,18 +44,18 @@ let spinner = new Spinner('processing..'.rainbow),
   occurs = 0;
 
 //Check the validity of the args
-if(!options.s || !options.t){
+if(!options.s || !options.t || !options.d){
   console.log(`
     Usage:
-      -d, --string, "Definer - DEFINER=\`{-d}\`@localhost\`"
+      -d, -h, --string, "Definer - DEFINER=\`{-d}\`@{-h}\`"
       -s, --string, "Input filepath"
-      -t --string, "Output filepath"
+      -t, --string, "Output filepath"
     `);
   process.exit();
 }
 
 //Search string
-let search = `DEFINER=\`${options.d}\`@\`localhost\``,
+let search = `DEFINER=\`${options.d}\`@\`${options.h}\``,
 
   //Regex for searching
   regex = new RegExp(search, 'g');
