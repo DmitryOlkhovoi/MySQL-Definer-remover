@@ -11,6 +11,11 @@
     "build": "babel src/lib -d lib && babel src/test -d test",
     "install": "npm run build"
   },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/DmitryAuine/MySQL-Definer-remover"
+  },
   "author": "Dmitry Olkhovoi",
   "license": "MIT",
   "dependencies": {
