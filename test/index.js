@@ -9,7 +9,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var expect = _chai2.default.expect;
 
 describe('Test', function () {
-  it('lol', function () {
+  it('TODO', function () {
     expect(true).to.equal(true);
   });
 });

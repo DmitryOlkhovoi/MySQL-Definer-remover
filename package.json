@@ -1,7 +1,7 @@
 {
   "name": "uti-definer-remover",
-  "version": "0.0.2",
-  "description": "This utility used to remove DEFINER from exported SQL script",
+  "version": "0.0.3",
+  "description": "This utility are used to remove DEFINER from exported SQL script",
   "main": "index.js",
   "bin": {
     "dremove": "./bin/index.js"
@@ -9,10 +9,10 @@
   "scripts": {
     "test": "mocha --reporter nyan",
     "build": "babel src/lib -d lib && babel src/test -d test",
-    "postinstall": "npm run build"
+    "install": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Dmitry Olkhovoi",
+  "license": "MIT",
   "dependencies": {
     "byline": "^4.2.1",
     "cli-spinner": "^0.2.1",
