@@ -31,7 +31,7 @@ let spinner = new Spinner('processing..'.rainbow),
       't'
     ],
     default: {
-      'h', 'localhost',
+      'h': 'localhost',
       's': 'db.sql',
       't': 'new.sql'
     }
